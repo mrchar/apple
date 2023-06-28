@@ -39,6 +39,7 @@
     "@tarojs/components": "3.6.8",
     "@tarojs/helper": "3.6.8",
     "@tarojs/plugin-framework-vue3": "3.6.8",
+    "@tarojs/plugin-html": "^3.6.8",
     "@tarojs/plugin-platform-alipay": "3.6.8",
     "@tarojs/plugin-platform-h5": "3.6.8",
     "@tarojs/plugin-platform-jd": "3.6.8",
@@ -49,7 +50,8 @@
     "@tarojs/runtime": "3.6.8",
     "@tarojs/shared": "3.6.8",
     "@tarojs/taro": "3.6.8",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",

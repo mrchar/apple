@@ -6,7 +6,7 @@
       </template>
       <template #default>
         <view class="w-full h-full z-0">
-          Main
+          <router-view/>
         </view>
       </template>
       <template #footer>
