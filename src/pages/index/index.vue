@@ -1,23 +1,25 @@
 <template>
-  <FullScreen>
-    <Framework>
+  <AFullScreen>
+    <AFramework>
       <template #header>
-        <view>Header</view>
+        <AHeader class="z-10"/>
       </template>
       <template #default>
-        <view class="w-full h-full">
+        <view class="w-full h-full z-0">
           Main
         </view>
       </template>
       <template #footer>
-        <view>Footer</view>
+        <AFooter class="z-10"/>
       </template>
-    </Framework>
-  </FullScreen>
+    </AFramework>
+  </AFullScreen>
 </template>
 
 <script lang="ts" setup>
 import "./index.css"
-import FullScreen from "../../layouts/FullScreen.vue"
-import Framework from "../../layouts/Framework.vue"
+import AFullScreen from "../../layouts/AFullScreen.vue"
+import AFramework from "../../layouts/AFramework.vue"
+import AHeader from "../../components/AHeader.vue"
+import AFooter from "../../components/AFooter.vue"
 </script>
