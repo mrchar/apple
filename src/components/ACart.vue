@@ -1,10 +1,10 @@
 <template>
-  <view class="w-full px-4 py-2 flex gap-2 justify-between">
-    <view class="text-lg px-4 py-2" @tap="router.push('/cart')">
+  <view class="w-full box-border px-4 py-2 flex gap-2 justify-between">
+    <view class="text-lg box-border px-4 py-2" @tap="router.push('/cart')">
       🛒Cart
     </view>
     <view class="flex-none flex gap-2">
-      <view class="px-4 py-2">
+      <view class="box-border px-4 py-2">
         {{ sum }}
       </view>
       <AButton>Pay</AButton>

@@ -1,5 +1,5 @@
 <template>
-  <view class="w-full h-20 p-2 text-2xl bg-white shadow">
+  <view class="w-full h-20 box-border p-2 text-2xl bg-white shadow">
     <ABanner/>
   </view>
 </template>

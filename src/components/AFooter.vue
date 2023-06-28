@@ -1,5 +1,5 @@
 <template>
-    <view class="w-full h-fit py-2 shadow-2xl bg-white">
+    <view class="w-full box-border py-2 shadow-2xl bg-white">
         <ACart/>
     </view>
 </template>

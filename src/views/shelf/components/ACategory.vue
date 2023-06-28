@@ -1,5 +1,5 @@
 <template>
-  <view class="px-2 py-4 bg-white flex flex-col gap-4">
+  <view class="box-border px-2 py-4 bg-white flex flex-col gap-4">
       <view v-for="item in categories" :key="item.id">
           <view>
               ❤️ {{item.name}}

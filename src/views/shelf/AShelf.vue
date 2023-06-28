@@ -3,7 +3,7 @@
     <ACategory class="flex-auto w-1/3"/>
     <view class="flex-auto w-2/3 h-full">
       <AScroll>
-        <view class="w-full h-full p-2 flex flex-col gap-2">
+        <view class="w-full h-full box-border p-2 flex flex-col gap-2">
           <AItem v-for="item in commodities" :key="item.id" :data="item"/>
         </view>
       </AScroll>
