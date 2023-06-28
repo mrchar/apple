@@ -11,67 +11,13 @@
   </view>
 </template>
 <script setup>
-import {ref} from "vue"
 import ACategory from "./components/ACategory.vue"
 import AItem from "./components/AItem.vue"
 import AScroll from "../../components/AScroll.vue"
+import {useShelf} from "../../store/shelf"
+import {storeToRefs} from "pinia"
 
-const commodities = ref([
-  {
-    id: 1,
-    name: "Commodity1",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 2,
-    name: "Commodity2",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 3,
-    name: "Commodity3",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 4,
-    name: "Commodity4",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 5,
-    name: "Commodity5",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 6,
-    name: "Commodity6",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 7,
-    name: "Commodity7",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 8,
-    name: "Commodity8",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-])
+const shelf = useShelf()
+
+const {commodities} = storeToRefs(shelf)
 </script>

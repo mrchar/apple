@@ -9,12 +9,10 @@
 </template>
 
 <script lang="ts" setup>
-import {ref} from "vue"
+import {useShelf} from "../../../store/shelf"
+import {storeToRefs} from "pinia"
 
-const categories = ref([
-  {id: 1, name: "Category1"},
-  {id: 2, name: "Category2"},
-  {id: 3, name: "Category3"},
-  {id: 4, name: "Category4"},
-])
+const shelf = useShelf()
+
+const {categories} = storeToRefs(shelf)
 </script>

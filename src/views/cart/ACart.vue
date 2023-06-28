@@ -1,6 +1,6 @@
 <template>
-  <view class="w-full h-full">
-    <view class="h-12 m-2 p-2 bg-white" @tap="router.back()">
+  <view class="w-full h-full flex flex-col">
+    <view class="flex-none h-12 m-2 p-2 bg-white" @tap="router.back()">
       返回
     </view>
     <AScroll>
@@ -11,69 +11,15 @@
   </view>
 </template>
 <script setup>
-import {ref} from "vue"
 import AScroll from "../../components/AScroll.vue"
 import AItem from "../shelf/components/AItem.vue"
+import {useCart} from "../../store/cart"
+import {storeToRefs} from "pinia"
 import {useRouter} from "vue-router"
 
 const router = useRouter()
 
-const commodities = ref([
-  {
-    id: 1,
-    name: "Commodity1",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 2,
-    name: "Commodity2",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 3,
-    name: "Commodity3",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 4,
-    name: "Commodity4",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 5,
-    name: "Commodity5",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 6,
-    name: "Commodity6",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 7,
-    name: "Commodity7",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-  {
-    id: 8,
-    name: "Commodity8",
-    description: "description",
-    price: "￥100",
-    image: "/vite.svg",
-  },
-])
+const cart = useCart()
+
+const {commodities} = storeToRefs(cart)
 </script>
