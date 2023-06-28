@@ -1,6 +1,6 @@
 <template>
   <view class="index">
-    <text>{{ msg }}</text>
+    <text class="text-2xl">{{ msg }}</text>
   </view>
 </template>
 
