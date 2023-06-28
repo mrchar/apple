@@ -1,19 +1,23 @@
 <template>
-  <view class="index">
-    <text class="text-2xl">{{ msg }}</text>
-  </view>
+  <FullScreen>
+    <Framework>
+      <template #header>
+        <view>Header</view>
+      </template>
+      <template #default>
+        <view class="w-full h-full">
+          Main
+        </view>
+      </template>
+      <template #footer>
+        <view>Footer</view>
+      </template>
+    </Framework>
+  </FullScreen>
 </template>
 
-<script>
-import { ref } from 'vue'
-import './index.css'
-
-export default {
-  setup () {
-    const msg = ref('Hello world')
-    return {
-      msg
-    }
-  }
-}
+<script lang="ts" setup>
+import "./index.css"
+import FullScreen from "../../layouts/FullScreen.vue"
+import Framework from "../../layouts/Framework.vue"
 </script>
