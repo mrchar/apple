@@ -5,7 +5,7 @@
     </view>
     <view class="flex-none flex gap-2">
       <view class="box-border px-4 py-2">
-        {{ sum }}
+        ￥{{ sum }}
       </view>
       <AButton>Pay</AButton>
     </view>

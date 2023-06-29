@@ -5,7 +5,8 @@
     </view>
     <AScroll>
       <view class="w-full h-full box-border p-2 flex flex-col gap-2">
-        <AItem v-for="item in commodities" :key="item.id" :data="item"/>
+        <AItem v-for="item in commodities" :key="item.id"
+               :model-value="item" :count="item.count"/>
       </view>
     </AScroll>
   </view>
