@@ -4,21 +4,24 @@
     <view class="flex-auto w-2/3 h-full">
       <AScroll>
         <view class="w-full h-full box-border p-2 flex flex-col gap-2">
-          <AItem v-for="item in commodities" :key="item.id"
-                 :model-value="item" :count="item.count"
-                 @change="(value)=>onItemChange({...item, count:value})"/>
+          <AItem v-for="item in commodities"
+                 :key="item.id"
+                 :model-value="item"
+                 @update:model-value="onItemChange"/>
         </view>
       </AScroll>
     </view>
   </view>
 </template>
-<script setup>
+
+<script lang="ts" setup>
+import {computed} from "vue"
+import {useShelf} from "../../store/shelf"
+import {useCart} from "../../store/cart"
+import {Commodity} from "../../models"
 import ACategory from "./components/ACategory.vue"
 import AItem from "./components/AItem.vue"
 import AScroll from "../../components/AScroll.vue"
-import {useShelf} from "../../store/shelf"
-import {useCart} from "../../store/cart"
-import {computed} from "vue"
 
 const shelf = useShelf()
 
@@ -36,12 +39,10 @@ const commodities = computed(() => {
 
       console.debug("没有从购物车中查找到商品，返回0")
       return {...commodity, count: 0}
-
     })
 })
 
-
-function onItemChange(commodity) {
+function onItemChange(commodity: Commodity & { count: number }) {
   console.debug("正在修改购物车，要处理的商品是", commodity)
   cart.setCommodity(commodity)
 }

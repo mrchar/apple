@@ -13,7 +13,7 @@
         </view>
         <view class="flex-none">
           <view class="inline-block p-2" @click="decrease()">-</view>
-          <view class="inline-block p-2">{{ count }}</view>
+          <view class="inline-block p-2">{{ modelValue.count }}</view>
           <view class="inline-block p-2" @click="increase()">+</view>
         </view>
       </view>
@@ -25,26 +25,28 @@
 import {Commodity} from "../../../models"
 
 type Props = {
-  modelValue: Commodity
-  count: number
+  modelValue: Commodity & { count: number }
 }
 
-const {modelValue, count} = defineProps<Props>()
+const props = defineProps<Props>()
 
-const emit = defineEmits(["change"])
+const emit = defineEmits(["update:modelValue"])
 
 function increase() {
+  const count = props.modelValue.count
   console.debug("添加商品数量，当前数量", count)
-  emit("change", count + 1)
+  emit("update:modelValue", {...props.modelValue, count: count + 1})
 }
 
 function decrease() {
+  const count = props.modelValue.count
+
   if (count <= 0) {
     console.debug("商品数量不能再减少")
     return
   }
 
   console.debug("减少商品数量，当前数量", count)
-  emit("change", count - 1)
+  emit("update:modelValue", {...props.modelValue, count: count - 1})
 }
 </script>
