@@ -4,10 +4,13 @@
     <view class="flex-auto w-2/3 h-full">
       <AScroll>
         <view class="w-full h-full box-border p-2 flex flex-col gap-2">
-          <AItem v-for="item in commodities"
-                 :key="item.id"
-                 :model-value="item"
-                 @update:model-value="onItemChange"/>
+          <template v-if="commodities&&commodities.length>0">
+            <AItem v-for="item in commodities"
+                   :key="item.id"
+                   :model-value="item"
+                   @update:model-value="onItemChange"/>
+          </template>
+          <view v-else class="border-box p-4 text-center">商品列表为空</view>
         </view>
       </AScroll>
     </view>

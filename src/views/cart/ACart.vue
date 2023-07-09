@@ -5,8 +5,13 @@
     </view>
     <AScroll>
       <view class="w-full h-full box-border p-2 flex flex-col gap-2">
-        <AItem v-for="item in commodities" :key="item.id"
-               :model-value="item" @update:model-value="onItemChange"/>
+        <template v-if="commodities&&commodities.length>0">
+          <AItem v-for="item in commodities" :key="item.id"
+                 :model-value="item" @update:model-value="onItemChange"/>
+        </template>
+        <view v-else class="text-center">
+          🛒购物车现在还是空的
+        </view>
       </view>
     </AScroll>
   </view>
