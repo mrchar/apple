@@ -10,7 +10,7 @@
                    :model-value="item"
                    @update:model-value="onItemChange"/>
           </template>
-          <view v-else class="border-box p-4 text-center">商品列表为空</view>
+          <view v-else class="box-border p-4 text-center">商品列表为空</view>
         </view>
       </AScroll>
     </view>

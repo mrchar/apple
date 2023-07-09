@@ -5,6 +5,7 @@ const routes: RouteRecordRaw[] = [
   {path: "/shelf", component: () => import("../views/shelf/AShelf.vue")},
   {path: "/cart", component: () => import("../views/cart/ACart.vue")},
   {path: "/search", component: () => import("../views/search/ASearch.vue")},
+  {path: "/bill", component: () => import("../views/bill/ABill.vue")},
 ]
 
 export default createRouter({

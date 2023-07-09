@@ -7,7 +7,7 @@
       <view class="box-border px-4 py-2">
         ￥{{ sum }}
       </view>
-      <AButton>Pay</AButton>
+      <AButton @click="router.push('/bill')">Pay</AButton>
     </view>
   </view>
 </template>
